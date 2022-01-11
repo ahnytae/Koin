@@ -42,6 +42,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 폴더 구조
 
+```bash
 ├── src/
 │   ├── api/
 │   │   ├── api.ts        			- price / ticker 호출
@@ -69,3 +70,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 │   │    ├── type.ts     						- 각 필요 타입 선언
 
 │   ├── index.tsx            			- 진입점
+```
