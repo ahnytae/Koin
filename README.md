@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# 업비트 Open Api 이용 가격표 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## 실행
 
-### `npm start`
+- yarn install -> yarn start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## 사용 api
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- https://api.upbit.com/v1/market/all
+- https://api.upbit.com/v1/ticker?markets=KRW-BTC,KRW-ETH
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 구현 기능리스트
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] 각 마켓별 시세 표시
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] 테이블 헤더부분 영문/한글명 전환 
+- [x] 현재가, 전일대비, 거래대금 정렬
+- [x] 현재가와 이전 가격 비교해서 상승,하락 색상 애니메이션 효과
+- [x] 거래대금 백만 단위로 표시
+- [ ] 코인명 왼쪽 미니 봉차트 구현x
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 데이터 흐름도
+
+![paint](https://user-images.githubusercontent.com/62460298/148898220-f4e506a5-dc6e-4373-9d19-ce92a13604eb.png)
+
+
+
+
+
+## 폴더 구조
+
+├── src/
+│   ├── api/
+│   │   ├── api.ts        			- price / ticker 호출
+│   │
+│   ├── component/               - view component 폴더
+│   │   ├── LodingSpinner.tsx    	 - 로딩 스피너 파일
+│   │   ├── MarketView.tsx         - 시세표 테이블
+
+│   ├── container/               - logic 폴더
+│   │   ├── MarketContainer.tsx    - view 폴더 보내기전 로직처리 파일
+
+│   ├── hook/
+│   │   ├── useInterval.ts     		- 5초 간격 가격 api 호출
+│ 	│   ├── usePrevious.ts				- 이전 데이터 값 저장 및 비교 (현재가 효과)
+
+│   ├──  model/            				- api 응답 값 타입
+│   │   ├── MarketPrice.ts     			- price api response 타입
+│   │		├── MarketTicker.ts					- ticker api response 타입
+
+│   ├──  service/            			- 데이터 가공 폴더
+│   │   ├── requestMarketPrice.ts   - price 응답값 가공
+│ 	│		├── requestMarketTicker.ts	- ticker 응답값 가공
+
+│   ├──  type/            				- 타입 폴더
+│   │    ├── type.ts     						- 각 필요 타입 선언
+
+│   ├── index.tsx            			- 진입점
