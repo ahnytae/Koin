@@ -30,6 +30,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 
+## 실행 화면
+
+![view](https://user-images.githubusercontent.com/62460298/150350714-077c5d7e-df8f-4f58-b4ce-104a0967a730.gif)
+
+
+
 
 
 ## 데이터 흐름도
@@ -45,29 +51,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```bash
 ├── src/
 │   ├── api/
-│   │   ├── api.ts        			- price / ticker 호출
+│   │   ├── api.ts => price & ticker api 호출
 │   │
-│   ├── component/               - view component 폴더
-│   │   ├── LodingSpinner.tsx    	 - 로딩 스피너 파일
-│   │   ├── MarketView.tsx         - 시세표 테이블
+│   ├── component/ => view component 폴더
+│   │   ├── LodingSpinner.tsx => 로딩 스피너 파일
+│   │   ├── MarketView.tsx => 시세표 테이블
 
-│   ├── container/               - logic 폴더
-│   │   ├── MarketContainer.tsx    - view 폴더 보내기전 로직처리 파일
+│   ├── container/ => logic 폴더
+│   │   ├── MarketContainer.tsx => view 폴더 보내기전 로직처리 파일
 
 │   ├── hook/
-│   │   ├── useInterval.ts     		- 5초 간격 가격 api 호출
-│ 	│   ├── usePrevious.ts				- 이전 데이터 값 저장 및 비교 (현재가 효과)
+│   │   ├── useInterval.ts => 5초 간격 가격 api 호출
+│ 	│   ├── usePrevious.ts => 이전 데이터 값 저장 및 비교 (현재가 효과)
 
-│   ├──  model/            				- api 응답 값 타입
-│   │   ├── MarketPrice.ts     			- price api response 타입
-│   │		├── MarketTicker.ts					- ticker api response 타입
+│   ├──  model/ => api 응답 값 타입
+│   │   ├── MarketPrice.ts => price api response 타입
+│   │		├── MarketTicker.ts => ticker api response 타입
 
-│   ├──  service/            			- 데이터 가공 폴더
-│   │   ├── requestMarketPrice.ts   - price 응답값 가공
-│ 	│		├── requestMarketTicker.ts	- ticker 응답값 가공
+│   ├──  service/ => 데이터 가공 폴더
+│   │   ├── requestMarketPrice.ts => price 응답값 가공
+│ 	│		├── requestMarketTicker.ts => ticker 응답값 가공
 
-│   ├──  type/            				- 타입 폴더
-│   │    ├── type.ts     						- 각 필요 타입 선언
+│   ├──  type/ => 타입 폴더
+│   │    ├── type.ts => 각 필요 타입 선언
 
-│   ├── index.tsx            			- 진입점
+│   ├── index.tsx => 진입점
 ```
