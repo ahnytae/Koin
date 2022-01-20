@@ -3,7 +3,6 @@ import styled, { css, keyframes } from "styled-components";
 
 // internal
 import "../styleSheet/common.css";
-import "../styleSheet/reset.css";
 import { MarketPrice } from "../model/MarketPrice";
 import { MarketType } from "../type/type";
 import { MarketTicker } from "../model/MarketTicker";
