@@ -1,6 +1,5 @@
 import "core-js/stable";
-import React from "react";
 import { render } from "react-dom";
-import MarketContainer from "./container/MarketContainer";
+import App from "./App";
 
-render(<MarketContainer />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
